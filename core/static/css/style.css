@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fefefe;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #ff8a80;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    padding: 60px;
+    text-align: center;
+    background: #ffe0e0;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #ff5252;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* PET CARDS */
+.pet-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pet-card {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.pet-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* FORMS */
+.form-container {
+    width: 350px;
+    margin: 60px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    background: #ff5252;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* SPECIAL BUTTONS */
+.fav-btn {
+    display: block;
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+.remove-btn {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    background: red;
+    padding: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+}

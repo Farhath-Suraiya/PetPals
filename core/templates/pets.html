@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PetPals - Pets</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="navbar">
+    <h1>PetPals 🐾</h1>
+    <a href="/">Home</a>
+    <a href="/favorites/">Favorites ❤️</a>
+</div>
+
+<h2 class="page-title">Available Pets</h2>
+
+<div class="pet-container">
+    {% for pet in pets %}
+    <div class="pet-card">
+        <img src="{{ pet.image }}" alt="Pet">
+        <h3>{{ pet.name }}</h3>
+        <p>{{ pet.description }}</p>
+
+        <a href="/favorites/add/{{ pet.id }}/" class="fav-btn">❤️ Add to Favorites</a>
+    </div>
+    {% empty %}
+    <p>No pets available.</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>

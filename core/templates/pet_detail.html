@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ pet.name }} - PetPals</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="navbar">
+    <h1><a href="/">PetPals</a></h1>
+    <a href="/pets/">Adopt</a>
+    <a href="/favorites/">Favorites</a>
+    {% if user.is_authenticated %}
+      <span>Hello, {{ user.username }}</span>
+      <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+      <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+  </div>
+
+  <div class="pet-card">
+    <img src="{{ pet.image }}" alt="{{ pet.name }}">
+    <h2>{{ pet.name }}</h2>
+    <p><strong>Breed:</strong> {{ pet.breed }}</p>
+    <p><strong>Age:</strong> {{ pet.age }} yrs</p>
+    <p>{{ pet.description }}</p>
+
+    {% if user.is_authenticated %}
+      {% if is_fav %}
+        <a href="{% url 'remove_favorite' pet.id %}" class="remove-btn">Remove Favorite</a>
+      {% else %}
+        <a href="{% url 'add_favorite' pet.id %}" class="fav-btn">Add to Favorites ❤️</a>
+      {% endif %}
+    {% else %}
+      <a href="{% url 'login' %}">Login to favorite</a>
+    {% endif %}
+  </div>
+</body>
+</html>

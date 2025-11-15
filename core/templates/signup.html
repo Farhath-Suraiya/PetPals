@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup - PetPals</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Create Account</h2>
+
+    <form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn">Sign Up</button>
+</form>
+
+</div>
+
+</body>
+</html>

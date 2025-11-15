@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favorites - PetPals</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="navbar">
+    <h1>❤️ Your Favorites</h1>
+    <a href="/">Home</a>
+</div>
+
+<div class="pet-container">
+    {% for pet in favorites %}
+    <div class="pet-card">
+        <img src="{{ pet.image }}">
+        <h3>{{ pet.name }}</h3>
+        <p>{{ pet.description }}</p>
+
+        <a href="/favorites/remove/{{ pet.id }}/" class="remove-btn">Remove ❌</a>
+    </div>
+    {% empty %}
+    <p>You have no favorite pets yet.</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>
